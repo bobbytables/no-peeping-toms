@@ -41,7 +41,8 @@ module NoPeepingToms
     # - All observers are enabled OR
     # - The observer is in the whitelist
     def observer_enabled?(observer)
-      default_observers_enabled or self.observers_enabled.include?(observer)
+      return true if default_observers_enabled or self.observers_enabled.include?(observer)
+      false
     end
   end
 
